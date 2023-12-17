@@ -1,0 +1,26 @@
+import time
+
+def run_typing_test():
+    passage = "The quick brown fox jumps over the lazy dog."
+    
+    input("Type the following passage:\n\n{}\n".format(passage))
+    
+    start_time = time.time()
+    
+    user_input = input("\nType here: ")
+    
+    end_time = time.time()
+    elapsed_time = end_time - start_time
+    
+    words_per_minute = calculate_words_per_minute(user_input, elapsed_time)
+    
+    print("\nYour typing speed is: {} WPM".format(words_per_minute))
+
+def calculate_words_per_minute(user_input, elapsed_time):
+    words_typed = len(user_input.split())
+    words_per_minute = (words_typed / elapsed_time) * 60
+    return round(words_per_minute)
+
+if __name__ == "__main__":
+    run_typing_test()
+
